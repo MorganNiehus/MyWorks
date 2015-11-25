@@ -1,0 +1,25 @@
+//Author: Morgan Niehus
+//Input: suspects text file containing the first and last names of the suspects
+//output: the status, whether the person searched for is in the database or not
+//date created: November 24 2015
+
+import java.util.*;
+import java.io.*;
+public class Main {
+
+	public static void main(String[] args)throws IOException {
+		File infill = new File("suspects.txt");
+		
+		Scanner s = new Scanner(System.in);
+		
+		
+		
+		MySalesSkel skel = new MySalesSkel();
+		String key = s.nextLine().toUpperCase();
+		skel.populate(infill, key);
+
+		
+		
+	}
+
+}
