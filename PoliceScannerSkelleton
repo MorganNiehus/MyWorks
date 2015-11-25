@@ -1,0 +1,70 @@
+import java.util.*;
+import java.io.*;
+public class MySalesSkel {
+	
+	private String newUser;
+	private String newPassword;
+	
+	public MySalesSkel(){
+	}
+
+
+	public void populate(File infill, String key) throws FileNotFoundException{
+		
+		ArrayList<String> names = new ArrayList<>();
+		@SuppressWarnings("resource")
+		Scanner s = new Scanner(infill);
+		while(s.hasNextLine()){
+			names.add(s.nextLine().toUpperCase());
+		}
+		boolean isThere = false;
+		for(int i = 0; i < names.size(); i++){
+			if(key.matches(names.get(i))){
+				System.out.println("Suspect " + key + " is present");
+				isThere = true;
+				break;
+			}
+	    }
+		if(isThere == false){
+			System.out.print("suspect " + key + " is not found");
+		}
+
+
+	}
+	
+	public void createAccount(String newUser, String newPassword){
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.printf("%-10s","Enter new username:\t");
+		this.setNewUser(scan.nextLine());
+		System.out.printf("%-10s","Enter new password:\t");
+		this.setNewPassword(scan.nextLine());
+		
+	}
+	
+	public void login(String newUser, String newPassword){
+		
+	}
+
+
+	public String getNewUser() {
+		return newUser;
+	}
+
+
+	public void setNewUser(String newUser) {
+		this.newUser = newUser;
+	}
+
+
+	public String getNewPassword() {
+		return newPassword;
+	}
+
+
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
+	}
+	
+	
+}
