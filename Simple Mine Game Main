@@ -1,0 +1,26 @@
+//Author: Morgan Niehus
+//Input: two numbers horiz and vert
+//output: status
+//date Created: November 27 2015
+//Description: this is a simple game that relies on 2d array input in
+//             in order to not step on the field mines, strictly a game of chance
+import java.io.*;
+import java.util.*;
+public class Main {
+	
+	public static void main(String[] args){
+		//setting the parameters of the playing field
+		final int ROWS = 10;
+		final int COLS = 10;
+		int[][] locs = new int[ROWS][COLS];
+		
+		//setting up user input
+		Scanner s = new Scanner(System.in);
+		//creating my object
+		NasaProjSkel skel = new NasaProjSkel();
+		//invoking my methods
+		skel.populate(locs);
+		skel.runChoices(locs, s);
+	}
+
+}
